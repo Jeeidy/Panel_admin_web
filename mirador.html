@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Mirador</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar (igual que en la página de inicio) -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <!-- ... (mismo contenido que en la página de inicio) ... -->
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Mirador</h1>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMiradorModal">
+                        <i class="bi bi-plus"></i> Agregar Mirador
+                    </button>
+                </div>
+
+                <!-- Lista de Miradores -->
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Ubicación</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Aquí se agregarían filas dinámicamente con JavaScript -->
+                            <tr>
+                                <td>1</td>
+                                <td>Mirador Principal</td>
+                                <td>Parque Central</td>
+                                <td>Activo</td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-secondary">Editar</button>
+                                    <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal para agregar/editar mirador -->
+    <div class="modal fade" id="addMiradorModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Agregar Mirador</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="miradorName" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="miradorName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="miradorLocation" class="form-label">Ubicación</label>
+                            <input type="text" class="form-control" id="miradorLocation" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="miradorStatus" class="form-label">Estado</label>
+                            <select class="form-select" id="miradorStatus" required>
+                                <option value="active">Activo</option>
+                                <option value="inactive">Inactivo</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

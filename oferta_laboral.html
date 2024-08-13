@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Oferta Laboral</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar (igual que en las páginas anteriores) -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <!-- ... (mismo contenido que en las páginas anteriores) ... -->
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Oferta Laboral</h1>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addJobModal">
+                        <i class="bi bi-plus"></i> Agregar Oferta
+                    </button>
+                </div>
+
+                <!-- Lista de Ofertas Laborales -->
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Título</th>
+                                <th>Departamento</th>
+                                <th>Fecha de Publicación</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Aquí se agregarían filas dinámicamente con JavaScript -->
+                            <tr>
+                                <td>1</td>
+                                <td>Guía Turístico</td>
+                                <td>Turismo</td>
+                                <td>2024-08-01</td>
+                                <td>Activa</td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-secondary">Editar</button>
+                                    <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal para agregar/editar oferta laboral -->
+    <div class="modal fade" id="addJobModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Agregar Oferta Laboral</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="jobTitle" class="form-label">Título del Puesto</label>
+                            <input type="text" class="form-control" id="jobTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jobDepartment" class="form-label">Departamento</label>
+                            <input type="text" class="form-control" id="jobDepartment" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jobDescription" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="jobDescription" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jobPublishDate" class="form-label">Fecha de Publicación</label>
+                            <input type="date" class="form-control" id="jobPublishDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jobStatus" class="form-label">Estado</label>
+                            <select class="form-select" id="jobStatus" required>
+                                <option value="active">Activa</option>
+                                <option value="inactive">Inactiva</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
